@@ -18,7 +18,7 @@
   
 }
 .navbar h1 {
-  color: #ff9c07;
+  color: #fc0808;
 }
 .navbar .links {
   margin-left: auto;
@@ -29,10 +29,24 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #ee0955a9;
+  color: #fc0808;
 }
 .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+}
+/* blog previews / list */
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.blog-preview h2 {
+  font-size: 20px;
+  color: #fc0808;
+  margin-bottom: 8px;
 }
