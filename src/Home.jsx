@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import BlogList from "./BlogList";
 const Home = () => {
 
@@ -14,6 +14,9 @@ const Home = () => {
     setBlogs(newBlogs);
     
   }
+  useEffect(() => {
+    console.log("run");
+  },)
 
     return (
       <div className="home">
