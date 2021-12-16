@@ -3,6 +3,8 @@ import Home from './Home';
 import Navbar from './Navbar';
 import React from "react";
 import { Route, Routes } from 'react-router-dom';
+import Create from './Create';
+import BlogDetails from './BlogDetails';
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
       <div className="content">
       <Routes >
         <Route path="/" element={ <Home/>} />
+        <Route path="/create" element={ <Create/>} />
+        <Route path="/blogs/:id" element={ <BlogDetails/>} />
        </Routes>  
       </div>
 
