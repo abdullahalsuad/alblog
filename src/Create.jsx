@@ -4,8 +4,15 @@ const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('');
-  const [smallDec, setSmallDec] = useState('');
+  const [dec, setDec] = useState('');
   const [date, setDate] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const blog = { title, body, author,dec,date};
+
+    console.log(blog);
+  }
 
   return (
     <div className="create">
@@ -38,9 +45,9 @@ const Create = () => {
         <input 
           type="text" 
           required 
-          value={smallDec}
+          value={dec}
           placeholder="short description - 20 limit"
-          onChange={(e) => setSmallDec(e.target.value)}
+          onChange={(e) => setDec(e.target.value)}
         />
         <label>Published Date :</label>
         <input 
@@ -50,7 +57,7 @@ const Create = () => {
           placeholder="MM-DD-YYYY at TIME"
           onChange={(e) => setDate(e.target.value)}
         />
-        <button>Add Blog</button>
+        <button onClick={handleSubmit}>Add Blog</button>
       </form>
     </div>
   );
