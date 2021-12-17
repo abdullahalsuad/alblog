@@ -1,4 +1,5 @@
 import { useState } from "react";
+import{useNavigate } from 'react-router-dom'
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -6,12 +7,22 @@ const Create = () => {
   const [author, setAuthor] = useState('');
   const [dec, setDec] = useState('');
   const [date, setDate] = useState('');
+  const navigate  = useNavigate();
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { title, body, author,dec,date};
 
-    console.log(blog);
+    fetch('http://localhost:8000/blogs/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blog)
+    }).then(() => {
+      console.log('new blog added');
+      //navigate(-1)
+      navigate('/')
+    })
   }
 
   return (
@@ -57,7 +68,7 @@ const Create = () => {
           placeholder="MM-DD-YYYY at TIME"
           onChange={(e) => setDate(e.target.value)}
         />
-        <button onClick={handleSubmit}>Add Blog</button>
+       <button onClick={handleSubmit} >Add Blog</button>
       </form>
     </div>
   );
